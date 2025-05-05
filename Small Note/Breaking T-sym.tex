@@ -1,0 +1,21 @@
+\documentclass[a4paper]{article}
+\usepackage{physics}
+\title{Breaking T-Sym}
+\begin{document}
+\section{Principle:}
+\quad If system initial at \(t_1\), it end in \(t_2\). Then we called the system to be T-symmetry if we start from \(t_2\), reverse the time direction, it have to go back to \(t_1\)
+\section{T-Symmetry Breaking:}
+\quad Considering a charged particle in magnetic field, we have the Lorentz force act on it:
+\begin{equation}
+	\vec{F} = q \vec{v} \times \vec{B}
+\end{equation}
+\quad The breaking symmetry is coming from:
+\begin{equation}
+	t \to -t \Rightarrow \vec{v} = \dv{\vec{r}}{t} \to - \vec{v}
+\end{equation}
+But since:
+\begin{equation}
+	\vec{B} = \nabla \times A = \vec{B} \to \vec{B}
+\end{equation}
+If the particle is in the position \(t_2\), we swap them with \(-\vec{v}\) and redo the clock from \(t_1\), it will not arrive at the initial position when the clock go to \(t_2\), therefore breaking the T-symmetry.
+\end{document}

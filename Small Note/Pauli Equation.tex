@@ -1,0 +1,18 @@
+\documentclass[a4paper]{article}
+\usepackage{physics}
+\title{Pauli Hamiltonian}
+\begin{document}
+	\maketitle
+Since we are working with the charge in the interaction between the 1/2 charge and the external field, we need to use the Pauli Equation instead of the original Schrödinger equation. In general, it reads:
+\begin{equation}
+	\bigg[\frac{1}{2m} (\vec{\sigma}(\vec{p} - q\vec{A}))^2 + q\phi\bigg] \ket{\psi} = i\hbar\pdv{\ket{\psi}}{t}
+\end{equation}
+To separate the spinor part and the radius part, we use the Pauli vector identity:
+\begin{equation}
+	(\vec{\sigma}\cdot\vec{a})(\vec{\sigma}\cdot\vec{b}) = \vec{a}\cdot\vec{b} + i \vec{\sigma}\cdot(\vec{a} \cross \vec{b}),
+\end{equation}
+which in turn, implies: \(\sigma_j \sigma_k = \delta_{jk}I + i \varepsilon_{jkl}\sigma_l\). Also, since \(\vec{p} \propto \nabla\) and \(\nabla \cross \vec{A} = \vec{B}\), then the standard Pauli equation will be:
+\begin{equation}
+	\bigg[\frac{1}{2m} \big[(\vec{p} - q\vec{A})^2 - q\hbar \sigma \cdot \vec{B}\big] + q\phi\bigg] \ket{\psi} = i\hbar \pdv{\ket{\psi}}{t}
+\end{equation}
+\end{document}
