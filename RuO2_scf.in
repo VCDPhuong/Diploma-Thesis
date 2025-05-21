@@ -17,10 +17,7 @@
     ntyp = 2,                           ! Number of atomic species
     nbnd = 6,                           ! Number of electronic states (bands) to be calculated
     nspin = 2,                          ! Spin-polarized calculation
-    starting_magnetization(1)=0.8,
-    lspinorb=.true.
-    angle1(1)=0.0d0
-    angle2(1)=180.0d0
+    lspinorb=.true.,
     ecutwfc=60,
     ecutrho=640,
     occupations = 'smearing',           ! Use smearing for occupation numbers
@@ -50,5 +47,3 @@ ATOMIC_POSITIONS crystal !Relative to the lattice constant
 
 K_POINTS {automatic}
   26  26  1  0 0 0
-HUBBARD (ortho-atomic)
-U V-3d 1.3
