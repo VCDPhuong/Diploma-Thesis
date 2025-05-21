@@ -1,5 +1,6 @@
 &CONTROL                                ! Control parameters for the calculation
     calculation = 'scf',                ! Type of calculation: self-consistent field (SCF)
+    restart_mode = 'from_scratch'
     prefix = 'RuO2',                    ! Prefix for output files
     outdir = './tmp/',                  ! Directory for temporary files
     pseudo_dir = './pseudo/',           ! Directory containing pseudopotential files
