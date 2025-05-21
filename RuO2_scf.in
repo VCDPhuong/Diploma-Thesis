@@ -25,7 +25,7 @@
     degauss=0.005d0,
     noinv = .true.,                     ! No symmetry from k -> -k
     no_t_rev =.true.                    ! No time-reversal symmetry 
-/       
+/
 
 &ELECTRONS                              ! Electronic minimization parameters
     conv_thr = 1.0d-10,                  ! Convergence threshold for self-consistency
