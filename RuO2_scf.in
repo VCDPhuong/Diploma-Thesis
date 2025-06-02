@@ -17,7 +17,8 @@
     ntyp = 2,                           ! Number of atomic species
     nbnd = 6,                           ! Number of electronic states (bands) to be calculated
     nspin = 2,                          ! Spin-polarized calculation
-    lspinorb=.true.,
+    lspinorb = .true.,
+    noncolin = .true.,
     ecutwfc=60,
     ecutrho=640,
     occupations = 'smearing',           ! Use smearing for occupation numbers
