@@ -1,0 +1,6 @@
+&PROJWFC
+  prefix= 'RuO2',
+  outdir= './tmp/',
+  filpdos= 'Ru_pdos.k.dat'
+  kresolveddos = .true.
+/

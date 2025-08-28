@@ -1,0 +1,6 @@
+&inputpp
+   outdir = './tmp/',
+   prefix = 'RuO2',
+   seedname = 'RuO2',
+   spin_component = 'down'
+/

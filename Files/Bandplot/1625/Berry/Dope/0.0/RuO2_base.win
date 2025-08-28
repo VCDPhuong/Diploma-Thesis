@@ -1,0 +1,77 @@
+use_ws_distance = .true.
+!restart = plot
+num_bands = 34          ! In nscf calculation's file, only 34 bands are shown
+num_wann = 22  !2Ru: 3 from 4d, 1 from 5s, 2O: 2 from 2p (only 1 spin is considered) 
+
+num_iter = 2000
+wannier_plot_supercell = 3
+spin = up
+
+fermi_surface_plot = true
+
+! Band structure plotting
+bands_plot = true
+bands_num_points = 100
+
+dis_win_min = 3.0
+dis_win_max = 20.0
+!dis_froz_max = 12.2536 !everything will be froze below this, I don't think this is good for metalic system
+
+
+iprint = 5
+
+
+begin unit_cell_cart
+ang
+  4.5405   0.0000   0.0000
+  0.0000   4.5405   0.0000
+  0.0000   0.0000   3.1323
+end unit_cell_cart
+
+
+
+begin atoms_frac
+Ru1    0.000   0.000   0.000
+Ru2    0.500   0.500   0.500
+O1     0.195   0.805   0.500
+O2     0.805   0.194   0.500
+O3     0.695   0.695   0.000
+O4     0.305   0.305   0.000
+end atoms_frac
+
+
+begin projections
+Ru1: d
+Ru2: d
+O1: p
+O2: p
+O3: p
+O4: p
+end projections
+
+berry=true
+berry_task = ahc
+fermi_energy_min = 11.5 !scan
+fermi_energy_max = 12.5
+berry_curv_adpt_kmesh = 5
+berry_curv_adpt_kmesh_thresh = 100.0
+berry_kmesh = 50 50 50
+
+begin kpoint_path
+G 0.0 0.0 0.0    X 0.5 0.0 0.0
+X 0.5 0.0 0.0    R 0.5 0.0 0.5
+R 0.5 0.0 0.5    Z 0.0 0.0 0.5
+Z 0.0 0.0 0.5    G 0.0 0.0 0.0
+G 0.0 0.0 0.0    M 0.5 0.5 0.0
+M 0.5 0.5 0.0    A 0.5 0.5 0.5
+A 0.5 0.5 0.5    Z 0.0 0.0 0.5
+end kpoint_path
+
+
+
+mp_grid = 16 16 25
+begin kpoints
+.... !This will be insert with k-point list using cat
+.... !14000 line of k point is not fun to check, change kpoint.list to do it
+end kpoints
+

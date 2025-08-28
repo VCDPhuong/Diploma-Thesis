@@ -1,0 +1,56 @@
+&CONTROL                                ! Control parameters for the calculation
+    calculation = 'scf',                ! Type of calculation: self-consistent field (SCF)
+    restart_mode = 'from_scratch',
+    prefix = 'RuO2',                    ! Prefix for output files
+    outdir = './tmp/',                  ! Directory for temporary files
+    pseudo_dir = '../Pseudo/',           ! Directory containing pseudopotential files
+    verbosity = 'high',                 ! Level of output detail
+    tprnfor = .true.,                  ! We don't forces on atoms
+    tstress = .true.,                 ! We don't need stress tensor
+/
+&SYSTEM                                 ! System-specific parameters
+    ibrav = 6,                          ! Bravais lattice index
+    a = 4.5405,                   ! After relaxed!
+    c = 3.1323,
+    nat = 6,                            ! Number of atoms in the unit cell
+    ntyp = 3,
+    nspin = 2,                          ! Number of atomic species
+    starting_magnetization(1) = 0.8,    ! Ru1
+    starting_magnetization(2) = -0.8,   ! Ru2
+    starting_magnetization(3) = 0.0,    ! O (non-magnetic)
+    ecutwfc=90,
+    ecutrho=700,
+    occupations = 'smearing',           ! Use smearing for occupation numbers
+    smearing = 'mv',                    ! Methfessel-Paxton smearing
+    degauss=0.005d0,
+    nosym =.true.,
+    noinv =.true.,
+/
+
+&ELECTRONS                              ! Electronic minimization parameters
+    electron_maxstep=400,
+    conv_thr = 5.0d-10,                  ! Convergence threshold for self-consistency
+    mixing_beta = 0.03,                  ! Mixing factor for self-consistency
+
+/
+ATOMIC_SPECIES                          ! Atomic species: label, mass, pseudopotential file
+    Ru1  101.07  Ru.pbe-spn-kjpaw_psl.1.0.0.UPF
+    Ru2  101.07  Ru.pbe-spn-kjpaw_psl.1.0.0.UPF
+    O    15.999  O.pbe-n-kjpaw_psl.0.1.UPF
+
+ATOMIC_POSITIONS crystal !Relative to the lattice constant
+ Ru1    0.00000    0.00000    0.00000
+ Ru2    0.50000    0.50000    0.50000
+ O      0.19500    0.80500    0.50000  ! O at (0.194558, 0.805442, 1/2) (4f Wyckoff)
+ O      0.80500    0.19400    0.50000  ! O symmetry equivalent
+ O      0.69500    0.69500    0.00000  ! O symmetry equivalent
+ O      0.30500    0.30500    0.00000  ! O symmetry equivalent
+
+
+
+K_POINTS {automatic}
+  10 10 16  0 0 0
+
+HUBBARD (ortho-atomic)
+U Ru1-4d 1.5
+U Ru2-4d 1.5

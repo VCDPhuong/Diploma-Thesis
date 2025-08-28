@@ -1,0 +1,59 @@
+&CONTROL                               
+    calculation = 'nscf',               
+    restart_mode = 'from_scratch',
+    prefix = 'RuO2',                    
+    outdir = './tmp/',                  
+    pseudo_dir = '../../../Pseudo/',       
+    verbosity = 'high',                 
+    tprnfor = .true.,                  
+    tstress = .true.,                 
+/       
+&SYSTEM                                
+    ibrav = 6,                          
+    a = 4.5405,                  
+    c = 3.1323,
+    nat = 6,                            
+    ntyp = 3,
+    nspin = 2,                         
+    starting_magnetization(1) = 0.8,    
+    starting_magnetization(2) = -0.8,   
+    starting_magnetization(3) = 0.0,   
+    ecutwfc=90,
+    ecutrho=700,
+    occupations = 'smearing',          
+    smearing = 'mv',                    
+    degauss=0.005d0,
+    nosym =.true.,    
+    noinv =.true.,
+    nbnd = 34,
+    !occupations = 'tetrahedra'
+/
+
+&ELECTRONS                              
+    electron_maxstep=400,
+    conv_thr = 5.0d-10,                 
+    mixing_beta = 0.03,                  
+/
+
+ATOMIC_SPECIES                    
+    Ru1  101.07  Ru.pbe-spn-kjpaw_psl.1.0.0.UPF
+    Ru2  101.07  Ru.pbe-spn-kjpaw_psl.1.0.0.UPF
+    O    15.999  O.pbe-n-kjpaw_psl.0.1.UPF
+
+ATOMIC_POSITIONS crystal 
+ Ru1    0.0000000000    0.0000000000    0.0000000000
+ Ru2    0.5000000000    0.5000000000    0.5000000000
+ O      0.1945578400    0.8054421600    0.5000000000  
+ O      0.8054421600    0.1945578400    0.5000000000 
+ O      0.6945578400    0.6945578400    0.0000000000   
+ O      0.3054421600    0.3054421600    0.0000000000  
+
+
+
+K_POINTS automatic
+10 10 16 0 0 0
+
+
+HUBBARD (ortho-atomic)
+U Ru1-4d 1.5
+U Ru2-4d 1.5

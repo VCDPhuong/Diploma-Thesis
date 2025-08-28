@@ -1,0 +1,5 @@
+&PROJWFC
+  prefix= 'RuO2',
+  outdir= './tmp/',
+  filpdos= 'Ru_pdos.dat'
+/

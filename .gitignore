@@ -1,0 +1,10 @@
+# Ignore all files with .tex extension
+*.tex
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+Ru_pdos.*
+RuO2_band.*

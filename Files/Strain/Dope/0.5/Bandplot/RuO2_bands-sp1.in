@@ -1,0 +1,6 @@
+&BANDS
+   prefix = 'RuO2'
+   outdir='./tmp',
+   filband = 'RuO2_bands-sp1.dat'
+   spin_component = 1
+/
